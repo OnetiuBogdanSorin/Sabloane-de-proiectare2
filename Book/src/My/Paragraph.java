@@ -2,6 +2,7 @@ package My;
 
 public class Paragraph implements Element {
 	public String Nume;
+	public AlignStrategy align;
 	
 	public Paragraph() {}
 	public Paragraph(String N) {
@@ -19,7 +20,15 @@ public class Paragraph implements Element {
 	
 	@Override
 	public void print() {
-		System.out.println(Nume);
-		
+		if(align != null) {
+		align.print(Nume);}
+		else System.out.println(Nume);
 	}
+	
+	public void setAlignStrategy(AlignStrategy align) {
+		this.align=align;}
 }
+
+
+	
+
